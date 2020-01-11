@@ -2,6 +2,8 @@
 
 A funny piano made with React
 
+Demo: [https://react-piano-app.netlify.com/](https://react-piano-app.netlify.com/)
+
 ## Available Scripts
 
 In the project directory, you can run:
