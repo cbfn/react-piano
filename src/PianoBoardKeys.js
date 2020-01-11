@@ -10,7 +10,7 @@ function PianoBoardKeys(props) {
     };
   });
 
-  const handlePlayNote = note => e => {
+  function handlePlayNote(note) {
     const selectedNote = typeof note !== "string" ? note.dataset.note : note;
     const noteAudio = document.getElementById(selectedNote);
 
@@ -23,7 +23,7 @@ function PianoBoardKeys(props) {
         note.classList.remove("active");
       });
     }
-  };
+  }
 
   function handleKeyDown(e) {
     if (e.repeat) return;
@@ -32,7 +32,7 @@ function PianoBoardKeys(props) {
 
     keyCode.forEach((element, k) => {
       if (element.dataset.keycode === key) {
-        handlePlayNote(element).call();
+        handlePlayNote(element);
       }
     });
   }
@@ -45,7 +45,7 @@ function PianoBoardKeys(props) {
             data-note={key.note}
             data-keycode={key.keyCode}
             className={`key ${key.color}`}
-            onClick={handlePlayNote(key.note)}
+            onClick={() => handlePlayNote(key.note)}
           />
           <audio id={key.note} src={require(`./notes/${key.note}.mp3`)} />
         </div>
