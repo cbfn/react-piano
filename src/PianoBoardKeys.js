@@ -11,9 +11,9 @@ function PianoBoardKeys(props) {
   });
 
   const handlePlayNote = note => e => {
-    const currentNote = typeof note !== "string" ? note.dataset.note : note;
+    const selectedNote = typeof note !== "string" ? note.dataset.note : note;
+    const noteAudio = document.getElementById(selectedNote);
 
-    const noteAudio = document.getElementById(currentNote);
     noteAudio.currentTime = 0;
     noteAudio.play();
 
