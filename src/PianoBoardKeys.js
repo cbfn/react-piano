@@ -7,8 +7,13 @@ function PianoBoardKeys(props) {
 
     return () => {
       document.removeEventListener(handleKeyDown);
+      document.removeEventListener(removeActiveClass);
     };
   });
+
+  function removeActiveClass(note) {
+    return note.classList.remove("active");
+  }
 
   function handlePlayNote(note) {
     const selectedNote = typeof note !== "string" ? note.dataset.note : note;
@@ -19,9 +24,7 @@ function PianoBoardKeys(props) {
 
     if (typeof note !== "string") {
       note.classList.add("active");
-      noteAudio.addEventListener("ended", () => {
-        note.classList.remove("active");
-      });
+      noteAudio.addEventListener("ended", () => removeActiveClass(note));
     }
   }
 

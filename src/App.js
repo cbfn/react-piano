@@ -9,7 +9,7 @@ function App() {
       <h2>React Piano App</h2>
       <h1>A Funny piano made with React</h1>
       <div className="repository">
-        Repository:&nbsp;
+        Repository:
         <a
           href="https://github.com/cbfn/react-piano"
           target="_blank"
@@ -41,6 +41,7 @@ const StyledApp = styled.div`
       color: #fff;
       display: inline-block;
       text-decoration: none;
+      padding-left: 5px;
       &:hover {
         text-decoration: underline;
       }
